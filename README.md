@@ -1,6 +1,7 @@
-# Sidey
+# Musings
 
-Sidey is a simple and minimalistic jekyll blogging theme.
+This is a musings blog, a collection of the things I like. 
+Made from Jekyll with the help of Sidey theme by [ronv](https://github.com/ronv/sidey) 
 
 ### Features
 
