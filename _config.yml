@@ -1,0 +1,62 @@
+site: Sidey
+url: https://blog.burakaymakci.com
+title: Burak Kaymakci | Personal Blog
+description: A personal blog where I usually take notes that are important to me
+twitter:
+  username: andreyuhai
+  card: summary
+  creator: #yourusername
+author:
+  twitter: andreyuhai
+  name: Burak
+  avatar:
+  email: #youremail
+  url: #yoururl
+permalink: pretty
+
+baseurl: "https://blog.burakaymakci.com"
+
+highlighter: rouge
+
+exclude:
+  - .jekyll-cache
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:slug
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

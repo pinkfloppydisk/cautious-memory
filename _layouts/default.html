@@ -1,0 +1,66 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en" >
+  {% include head.html %}
+  <body>
+    <main role="main">
+
+	    {% include navigation.html %}
+
+        {{ content }}
+
+    </main>
+		<script type="text/javascript">
+			function setTheme(theme) {
+				if (theme === "dark") {
+					document.documentElement.setAttribute('data-theme', 'dark');
+					window.localStorage.setItem('theme', 'dark');
+					document.getElementById("theme-toggle").classList.add('sun');
+					document.getElementById("theme-toggle").classList.remove('moon');
+				} else {
+					document.documentElement.setAttribute('data-theme', 'light');
+					window.localStorage.setItem('theme', 'light');
+					document.getElementById("theme-toggle").classList.add('moon');
+					document.getElementById("theme-toggle").classList.remove('sun');
+				}
+			}
+
+			let theme = localStorage.getItem('theme');
+
+			theme = theme || (window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' : 'light');
+
+			setTheme(theme);
+
+			function modeSwitcher() {
+				let currentMode = document.documentElement.getAttribute('data-theme');
+
+				if (currentMode === "dark") {
+					setTheme('light');
+				} else {
+					setTheme('dark');
+				}
+			}
+		</script>
+        <script id="dsq-count-scr" src="//blog-andreyuhai-com.disqus.com/count.js" async></script>
+        <!-- Google Analytics -->
+        <!-- Asynchronous Google Analytics snippet -->
+		<script>
+		  var _gaq = _gaq || [];
+		  var pluginUrl =
+		 '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+		  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+		  _gaq.push(['_setAccount', 'UA-120699559-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+        <!-- Google Analytics end -->
+  </body>
+</html>
